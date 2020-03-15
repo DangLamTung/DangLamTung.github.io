@@ -11,8 +11,17 @@ layout: default
       <div class="entry">
         {{ post.excerpt }}
       </div>
-
+      <p class="post-meta">Posted by
+        {% if post.author %}
+        {{ post.author }}
+        {% else %}
+        {{ site.author }}
+        {% endif %}
+        on
+        {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
+      </p>
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+
     </article>
   {% endfor %}
 </div>
