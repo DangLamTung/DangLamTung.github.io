@@ -5,7 +5,7 @@
 # Name of your site (displayed in the header)
 name: Đặng Lâm Tùng
 # Short bio or description (displayed in the header)
-description: Một sinh viên nghèo với mong ước được làm người chồng nội trợ 
+description: Một sinh viên nghèo với mong ước được chui chạn
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars2.githubusercontent.com/u/21233885?s=60&u=0a5143c8072cd705680ecff917f653d4804cfe64&v=4
@@ -52,7 +52,7 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-permalink: /:categories/:title/
+permalink: /:title/
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
@@ -78,7 +78,7 @@ gems:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jemoji
 
-theme: jekyll-theme-clean-blog
+theme: minimal-mistakes-jekyll
 # Exclude these files from your production _site
 exclude:
   - Gemfile
