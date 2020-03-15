@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Xe tự lái có chọi lại ninja Lead ??? :D ???
-categories: Autonomous Car, deep learning
+categories: [Autonomous Car, deep learning]
 published: true
 mathjax: true
 ---

@@ -5,8 +5,7 @@ date:   2018-6-28 12:23:17 -0500
 categories: [Computer Vision,deep learning]
 published: true
 mathjax: true
-image:
-  background: /images/post5/3.jpg
+background: '/PATH_TO_IMAGE'
 ---
 
 Thực sự mấy hôm nay thử cài lại mobilenet mà khó khăn quá :( viết note tổng hợp lại vậy :( (hong phải lấy keras ra đâu :3)
