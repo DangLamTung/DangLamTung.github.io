@@ -78,7 +78,6 @@ gems:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jemoji
 
-theme: minimal-mistakes-jekyll
 # Exclude these files from your production _site
 exclude:
   - Gemfile
