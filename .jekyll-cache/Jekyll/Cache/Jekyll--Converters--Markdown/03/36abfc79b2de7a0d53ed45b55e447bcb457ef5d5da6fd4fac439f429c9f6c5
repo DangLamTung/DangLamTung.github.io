@@ -1,0 +1,45 @@
+I"�<h1 id="1thư-viện-nlp-underthesea">1.Thư viện NLP underthesea</h1>
+
+<p>Tớ không phải quảng cáo underthesea đâu :)))
+“Phong ba bão táp không bằng ngữ pháp Việt Nam” - ai đó đã nói vậy.</p>
+
+<p>Bước đầu trong quá trình làm chatbot là bây giờ ta phải tách được từ tiếng Việt ra, công việc này khó :3 ví dụ “con ngựa đá con ngựa đá” chẳng hạn :)) phân loại kiểu chi :))
+Thật may là cũng có rất nhiều team đã thực hiện nghiên cứu về vấn đề này nên ta đã có một bộ thư viện khá đầy đủ :))) trong số đó có underthesea là mới nhất :3</p>
+
+<p>Để cài thì ta chỉ việc đánh pip install underthesea==1.1.8 trên terminal :)))</p>
+
+<p><img src="/images/post3/1.jpg" alt="an image alt text" title="Thư viện Underthesea" /></p>
+
+<p>Gói Word Tokenize của underthesea :3</p>
+
+<h1 id="2-mô-hình-bag-of-word">2. Mô hình Bag of Word</h1>
+
+<p>Trong thực tế, những gì ta thu nhận được từ môi trường qua các giác quan là các đặc điểm (feature) ví dụ như điểm bài thi Gt2, hình ảnh một bạn nữ dễ thương,… những feature đó được thu lại và đưa vào não để xử lý, tư duy ,….. nhờ đó ta nhận thức được thế giới.</p>
+
+<p>Máy tính cũng như vậy, trong một mô hình máy học thì các dữ liệu đầu vào được tách đặc trưng, rồi sử dụng các thuật toán machine learning/deep learning để xử lý. Trong computer vision ta tách đặc trưng ảnh bằng CNN, hoặc HOG, SIFT,…..</p>
+
+<p>Vậy thì xử lý ngôn ngữ tự nhiên cũng giống vậy, và để tách đặc trưng của một câu thì ta sẽ đi theo hướng là: Tách từ (Word Tokenize) -&gt; Bỏ các từ không cần thiết (Stop Words) -&gt; Biến đổi bằng một mô hình nào đó để đưa về  vector. Công việc của Bag of Word là biến đổi một câu thành các vector.</p>
+
+<p>Hiểu cho đơn giản thì BoW sẽ đếm số lần một từ xuất hiện trong một câu. Ví dụ câu “Tớ thích cậu rất nhiều, thích nhiều lắm, bla bla” thì từ “thích” suất hiện 2 lần, như vậy nhiều khả năng nó nói về hành động ai đó thích ai đó :))).</p>
+
+<p><img src="/images/post2/2.jpg" alt="an image alt text" title="Ví dụ BoW" /></p>
+
+<p>Đơn giản nhất là ta thử một ví dụ: 
+(1) John likes to watch movies. Mary likes movies too.
+(2) John also likes to watch football games.
+Từ đây ta tách được từ điển:
+[“John”, “likes”, “to”, “watch”, “movies”, “also”, “football”, “games”, “Mary”, “too”]
+Bằng cách đếm số lần suất hiện trong mỗi từ trong câu, ta sẽ được vector BoW của 2 câu:
+(1) [1, 2, 1, 1, 2, 0, 0, 0, 1, 1]
+(2) [1, 1, 1, 1, 0, 1, 1, 1, 0, 0]
+Vậy là ta đã có một vector feature để đánh giá, dễ thấy luôn là BoW không tốt nếu muốn xử lý câu kiểu “Anh yêu em” và “Em yêu anh” thì nó sẽ ra cùng vector, nói chung là không ổn trong một số trường hợp ;), hoặc từ điển của ta có tầm 1 triệu từ thì số chiều của vector quá là lớn :) một số kĩ thuật cải tiến BoW có thể kể đến TF-IDF hoặc sparse vector.</p>
+
+<h1 id="3tạo-dataset-và-dùng-mạng-neural-phân-loại-text-3">3.Tạo dataset và dùng mạng neural phân loại text :3</h1>
+
+<p>Cơ bản là nhét cái feature vector vào mạng neural bình thường thôi :3
+Data được lưu trong một file json có text và các tags để phân loại :3 sau khi tách feature ta sẽ train mạng neural dựa trên feature vector đó và dùng tags làm label :3 sau khi ra tags rồi tớ random cách trả lời dữa trên response có sẵn :))</p>
+
+<p><img src="/images/post2/3.jpg" alt="an image alt text" title="Demo chatbot" /></p>
+
+<p>Demo chatbot của tớ</p>
+:ET

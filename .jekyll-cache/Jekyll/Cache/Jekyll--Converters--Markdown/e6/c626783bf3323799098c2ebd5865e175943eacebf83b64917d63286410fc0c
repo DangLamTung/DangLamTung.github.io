@@ -1,0 +1,109 @@
+I"J<h1 id="1xe-tự-lái-là-cái-chi-chi-">1.Xe tự lái là cái chi chi :#</h1>
+<p>Search google là biết rùi đó :)))))))))))))))))))</p>
+
+<p><img src="/images/post4/1.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p>Tất nhiên không phải nói cái này rồi :)) mà là autonomous car:</p>
+
+<p><img src="/images/post4/2.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p><em>Vừa đọc sách vừa lái xe :3 phê quá còn gì</em>
+Vậy xe tự lái thì có gì hot ??? :3 ??? máy bay có thể tự lái được, thuyền cũng tự lái được, nhưng ô tô tự lái có thể đem lại nhiều điều hay ho :3. Ví dụ như ở Mĩ thì xe tải chính là huyết mạch của kinh tế Mĩ</p>
+
+<p><img src="/images/post4/3.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p>Mà xe thì tất nhiên phải có người lái, việc ăn ngủ hay thuê người lái nói chung là tổn phí, mà vận chuyển bằng tàu hay máy bay thì không linh động hay chi phí cao hơn nên không thể phát triển như đường bộ được. Vì thế ta cần xe tự lái.
+Khác với máy bay hay tàu thủy có xác suất tai nạn thấp (cứ thử tưởng tượng 2 con tàu biển đâm nhau thử :))) ) thì đường bộ với đặc điểm nhỏ hẹp thực sự rất dễ tai nạn, nên hệ thống tự lái của ô tô khá là phức tạp so với máy bay hay tàu thủy.</p>
+
+<p><img src="/images/post4/4.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p>Nhưng khó không có nghĩa không làm được :3, nhất là ta đang trong thời đại bùng nổ của deep learning :3</p>
+<h1 id="2cách-tiếp-cận-bài-toán-xe-tự-lái">2.Cách tiếp cận bài toán xe tự lái</h1>
+
+<p><img src="/images/post4/5.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<h2 id="phương-pháp-tiếp-cận-bài-toán-xe-tự-lái-của-ndivia">Phương pháp tiếp cận bài toán xe tự lái của Ndivia</h2>
+
+<p>Đầu tiên và cơ bản nhất để làm một chiếc xe tự lái, ta phải xác định được phần đường mình cần đi, phần này ta sẽ tách phần đường mình cần ra.</p>
+
+<p><img src="/images/post4/6.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<h2 id="nhận-dạng-phần-đường">Nhận dạng phần đường</h2>
+
+<p>Sau đó ta cần phải tìm góc của vô lăng dựa trên phần đường cần tìm, demo dưới đây dùng CNN:</p>
+
+<p><img src="/images/post4/7.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p><em>Demo tìm góc của vô lăng</em></p>
+
+<p>Vậy là xe đã có thể “lái” được. Tuy nhiên chỉ đơn giản là “lái” được. Cái mà chúng ta cần ví dụ như là gọi một xe taxi tự lái đến đón ta ở nhà và đưa ta đến đâu đó thì chưa đủ. Thực chất cái khó của xe tự lái nằm ở cách làm thế nào để biến mấy món đồ chơi thành cái gì đó sinh lợi nhuận được. Vì vậy chúng ta mới cần:</p>
+
+<h2 id="lidar-và-sensor-fusion">Lidar và sensor fusion</h2>
+
+<p><img src="/images/post4/7.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p>Trong nhiều điều kiện, cảm biến quang là không đủ để đưa ra nhận định chính xác về môi trường, vì vậy cần phải có nhiều các cảm biến khác để nâng cao độ an toàn. Ví dụ như lidar để đo khoảng cách chính xác, không phụ thuộc vào ánh sáng (vì là sóng ngắn), còn radar lại tốt hơn trong điều kiện mưa, vì vậy phối hợp 3 loại cảm biến này là quan trọng và nói chung là khó :3 riêng cái Kalman thôi học cũng muốn sml :))))))</p>
+
+<h2 id="path-planing-và-gps">Path-planing và GPS:</h2>
+
+<p><img src="/images/post4/8.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p>Ví dụ như đi trên đường có những thanh niên leader đi chặn đầu thì phải đi ra sao, đến nhà crush thì đi đường nào :3 những cái đó là phần này phải giải quyết, tưởng tượng đương đầu với leader là thấy mệt rồi :))))))) phần này nói chung là mệt, phải kết hợp nhiều kiến thức xử lý tín hiệu, máy học,………</p>
+
+<h2 id="object-detection">Object detection:</h2>
+
+<p>Lidar hay radar chỉ cho ta biết dạng của vật thể chứ không thể cho ta biết nó là cái gì, người vật,…. nên rất cần một hệ thống Object Detection ổn ổn để xe có thể né ra :3</p>
+
+<p><img src="/images/post4/9.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p>Ngoài ra còn có các vấn đề như giao thức điều khiển,…. noi chung đây là một bài toán khá là khó.</p>
+<h2 id="2-làm-thử-1-cái-đê-3">2. Làm thử 1 cái đê :3</h2>
+
+<p>Tuy là khó, nhưng không phải là không làm được :3</p>
+
+<p>Nếu chỉ làm một chiếc chơi thì không cần care mấy cái thứ phức tạp trên làm gì :3 ta chỉ cần care về cái cách xử lý CNN thôi :3</p>
+
+<p>Dưới đây là mô hình CNN của Ndivia :3 (pilotnet):</p>
+
+<p><img src="/images/post4/10.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p><em>Ndivia pilotnet</em></p>
+
+<p>Còn đây là mô hình inception</p>
+
+<p><img src="/images/post4/11.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p><em>Inception</em></p>
+
+<p>Đó :3 căn bản là ez hơn nhiều :3
+Về cách mà CNN này hoạt động cũng đơn giản: đưa hình vào CNN và nó predict góc của vô lăng:</p>
+
+<p><img src="/images/post4/12.jpg" alt="an image alt text" title="Xe tự lái" /></p>
+
+<p><em>Hình ảnh thể hiện những nơi được tập trung để đưa ra góc quay</em></p>
+
+<p>Qúa trình thu data cũng đơn giản: người ta theo quay video đường người lái và góc vô lăng, sau đó lưu lại, rồi train mạng theo đó. Lưu ý là góc quay đã được đưa về một khoảng xác định trong khoảng của neuron output.
+Còn về hiệu quả :3 sau đây là xe của Ndivia:</p>
+
+<div class="video-container"><iframe src="https://www.youtube.com/embed/NJU9ULQUwng" frameborder="0" allowfullscreen="">
+</iframe></div>
+
+<p>Khá là OK ;) tuy nhiên nói luôn là không chọi lại mấy chị Leader đâu :) xe ở Mĩ mà chạy VN 100% là sml :))))))))). Vấn đề chính là do CNN cần nhiều data, và gặp data chưa thấy bao h là tiêu. Do đó thằng có nhiều data nhất là thằng thắng. Đó cũng là lý do kỉ nguyên AI này google nắm trùm :3
+Còn một số link tham khảo khá hay:</p>
+
+<p>https://devblogs.nvidia.com/deep-learning-self-driving-cars/ link chính chủ Ndivia</p>
+
+<p>https://www.udacity.com/course/self-driving-car-engineer-nanodegree–nd013 Chứng chỉ của udacity, 800 đô, cơ mà code thì có đăng github:</p>
+
+<p>https://github.com/udacity/self-driving-car</p>
+
+<p>Và một demo pilotnet bằng Tensorflow:</p>
+
+<p>https://github.com/SullyChen/Autopilot-TensorFlow</p>
+
+<p>Xe đồ chơi của một bác người Việt :3 chạy khá ngon :#</p>
+
+<p>https://github.com/experiencor/self-driving-toy-car</p>
+
+<p>Nhiêu đó là đủ làm một chiếc chạy chơi rùi ha :)) mà muốn đi Cuộc đua số thì còn thêm nhiều cơ :)))))))))))))</p>
+:ET

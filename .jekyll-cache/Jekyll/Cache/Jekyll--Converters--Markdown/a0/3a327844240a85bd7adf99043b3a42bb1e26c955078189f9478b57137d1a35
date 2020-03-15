@@ -1,0 +1,79 @@
+I"�<p>Nay được nghỉ Mác, ngồi nhà chán nên viết :3 với cũng chưa thấy bài nào nói về CNN có gì sai bằng tiếng Việt, có gì viết sau này làm blog :)))
+*Bài được tham khảo (chưa thể nói là dịch từ https://towardsdatascience.com/what-is-wrong-with-convolutional-neural-networks-75c2ba8fbd6f)</p>
+<h1 id="1cnn-là-gì">1.CNN là gì?</h1>
+<p>CNN là một loại mạng neuron phổ biến và có hiệu quả rất cao, được ứng dụng rất nhiều trong xử lý ảnh,….</p>
+
+<p><img src="/images/post2/1.jpg" alt="an image alt text" title="Inception V3" /></p>
+
+<p><em>Inception v3</em>
+Các thành phần của CNN gồm:</p>
+<h2 id="1-lớp-convolutional-tích-chập">1. Lớp Convolutional (Tích chập)</h2>
+<p>Theo định nghĩa tích chập là 1 phép toán thực hiện đối với 2 hàm số f và g, kết quả cho ra 1 hàm số thứ 3. Nó được ứng dụng trong xác suất, thống kê, thị giác máy tính (computer vision), xử lý ảnh, xử lý tín hiệu, kỹ thuật điện, học máy, và các phương trình vi phân. (Wikipedia)</p>
+
+<p><img src="/images/post2/2.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Tích chập</em></p>
+
+<p>Trong CNN tích chập được sử dụng để tách trích một số đặc trưng của một ma trận, ví dụ như hình trên. Một lớp tích chập sẽ tách một tính chất nào đó như mắt, mũi, bla bla…
+Có nhiều lớp tích chập để thu lại càng nhiều feature càng tốt :3</p>
+
+<p><img src="/images/post2/3.jpg" alt="an image alt text" title="Feature map" /></p>
+
+<p><em>Các đặc trưng được tách từ một lớp tích chập của Alexnet (cs231n)</em></p>
+<h2 id="2tầng-pooling">2.Tầng pooling</h2>
+<p>Mục đích chính và duy nhất của tất cả các mạng neural sinh ra là để giảm thiểu số lượng tính toán cần thiết, căn bản là mạng neuron fully connected có thể xấp xỉ tất cả các  hàm số. Vấn đề này được chứng minh trong bài http://neuralnetworksanddeeplearning.com/chap4.html</p>
+
+<p>Thế nhưng thực tế mà nói thì việc tính toán một mạng fully connected để thực hiện các công việc thực tế thì lại khác :)) ta không biết phải train ra sao, train thê nào để fully connected có thể chạy ngon được, chưa kể có nguy cơ overfit :)))
+Vì vậy mới có tầng pooling với mục đích giảm số chiều. Như hình là maxpooling 2x2 để giảm số chiều.</p>
+
+<p><img src="/images/post2/4.jpg" alt="an image alt text" title="Max Pooling" /></p>
+
+<p><em>MaxPooling</em></p>
+<h2 id="3-sau-cùng-là-một-mạng-fully-connected-và-softmax-3">3. Sau cùng là một mạng Fully Connected và Softmax :3</h2>
+<p>Tổng kết lại là nó như vầy
+<img src="/images/post2/5.jpg" alt="an image alt text" title="CNN" /></p>
+
+<h1 id="2vậy-sai-sai-chỗ-nào-3">2.Vậy sai sai chỗ nào :3</h1>
+<h2 id="1traning-tốn-rất-nhiều-data-thời-gian-tiền-bạc">1.Traning tốn rất nhiều data, thời gian, tiền bạc</h2>
+<p>Thuật toán huấn luyện mạng neural cho đến nay là back-propagation, một giải thuật tối ưu hóa theo kiểu đạo hàm :))) hay nói đúng hơn là một bài cực trị kiểu gt2 trên không gian hàng nghìn chiều :)))</p>
+
+<p><img src="/images/post2/6.jpg" alt="an image alt text" title="Back propagation" /></p>
+
+<p><em>back prop :)))</em></p>
+
+<p>Thực chất công nghệ “cao” nhất của loài người, phát minh vĩ đại nhất lịch sử bla bla như báo hay nói đến thực chất là mấy cái ma trận được tính toán, chỉnh sửa bla bla sao cho nó dự đoán tốt một cái gì đó, maybe xác suất Đức out vòng bảng World Cup :)))))</p>
+
+<p>Nhưng vấn đề là số chiều của bài toán này quá khủng, nên cần lượng data cỡ vài trăm triệu, toàn phép tính ma trận.</p>
+
+<p><img src="/images/post2/7.jpg" alt="an image alt text" title="Nvidia GTX 1080" /></p>
+
+<p><em>Mơ ước của tớ :))</em></p>
+
+<p>Chính vì vậy train CNN toàn trên GPU, vì GPU có số lõi lớn, có thể thực hiện tính toán ma trận song song :)) <em>nghe có vẻ giống FPGA</em> :)) thực chất là facebook có tuyển người làm FPGA cho AI https://www.facebook.com/careers/jobs/a0I1200000KujvKEAR/ mấy nay luận văn BK cũng lắm ông chơi FPGA, không biết làm ngon không chớ làm mlp cho MNIST là hơi còi đó :))) thực chất CNN ra đời từ tích chập rất phổ biến trong điện tử, với Yann LeCun cũng là dân EE, mà chuyện đó nói sau :))</p>
+
+<p>Về vấn đề training mạng thì cũng kiểu đào bitcoin vậy :) mà đào này là đào tri thức :)) mà cũng không phải ngon đâu :) training nhiều khi cả tháng mà ra kết quả như *** ấy chứ :)) nói chung là cũng không phải ngồi mát ăn bát vàng :))</p>
+
+<h2 id="2nhiều-trường-hợp-fail-rất-khó-đỡ-">2.Nhiều trường hợp fail rất khó đỡ :)</h2>
+
+<p>Đặc điểm của CNN là mỗi Convolutional layer chỉ tách một phần nhỏ của hình ảnh, một feature nào đó, và bỏ đi rất nhiều thông tin, sau đó pooling còn làm tình hình tệ hơn khi mà bỏ đi một số tính chất nữa.</p>
+
+<p>Do đó CNN không nhận biết được mối liên hệ về không gian của hình, ví dụ như 2 hình dưới đây cnn sẽ cho là một:</p>
+
+<p><img src="/images/post2/8.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p>Cũng có thể thấy là hướng của hình với CNN rất quan trọng :)) mấy nay làm facenet mà ăn hành vì định hướng cuả cái hình mà không giống data là no hành :)) deep learning là một môn khoa học, nhưng khi đem vào áp dụng thì là engineering, nhiều người học Computer SCIENCE, nhưng nhiều khi ta chỉ áp dụng chứ yếu tố SCIENCE thì cũng chưa chắc quan trọng bằng ra trường nhiều tiền :)))))))))))))))))))))))</p>
+
+<p>Một số ví dụ fail củ chuối của CNN có thể tìm thấy ở đây:</p>
+
+<p><img src="/images/post2/9.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Trích trong paper Deep Neural Networks are Easily Fooled: High Confidence Predictions for Unrecognizable Images</em></p>
+
+<p>Để sửa sai thì godfather Hinton đã ra Capsule net như là một hướng mới.</p>
+
+<div class="video-container"><iframe src="https://www.youtube.com/embed/rTawFwUvnLE" frameborder="0" allowfullscreen="">
+</iframe></div>
+
+<p>:3 tóm lại CNN ngon nhưng còn nhiều chỗ không ổn</p>
+
+:ET

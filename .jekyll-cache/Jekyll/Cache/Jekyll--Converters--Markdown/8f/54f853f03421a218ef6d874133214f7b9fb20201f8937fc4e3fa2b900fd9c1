@@ -1,0 +1,67 @@
+I"�<p>Hết nghỉ hè rồi :( quyết định viết gì đó cho đỡ chán</p>
+
+<p>Gần đây ta thường nghe đến mấy thứ như faceID, bảo mật bằng gương mặt, bla bla, vì cũng đang ngâm phần này nên để lại note này :3</p>
+
+<h1 id="1nhận-dạng-khuôn-mặt-là-gì">1.Nhận dạng khuôn mặt là gì????</h1>
+<p>Trong phim ta hay thấy những tình huống hết sức magical ví dụ như 1 nắc cơ zoom hình lên 1 triệu x, ấn ấn vài phát rồi hình nét như chụp bằng Leica :))) hay magical hơn như là ấn ấn mấy cái là load toàn bộ camera an ninh của một thành phố và tìm ra ai đó bằng vài cái nhấp chuột, giống như hình dưới nà:</p>
+
+<p><img src="/images/post1/img1.jpg" alt="Face regconition trong phim" title="Face" /></p>
+
+<p><em>Thấy chớ :3 ez tìm</em>
+Và công nghệ ngày càng tiến bộ thì chúng ta lại càng gần đến cảnh giới đời như phim, ví dụ như anh cả China gần đây công bố hệ thống nhận dạng mặt phê như vầy:</p>
+
+<p><img src="/images/post1/img2.jpg" alt="an image alt text" title="an image title" />
+<em>Hàng của Chị na nè :3</em></p>
+
+<p>Vậy làm thế nào mà nhận dạng được :3</p>
+
+<h1 id="2khó-khăn-chủ-yếu-là-gì-nạ-3">2.Khó khăn chủ yếu là gì nạ :3</h1>
+<p>Về căn bản một hình ảnh là một ma trận (hay đúng hơn là 1 tensor) gồm 3 màu rgb (kiến thức phổ thông thôi) :3</p>
+
+<p><img src="/images/post1/img3.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Minh họa của khóa CS231n</em></p>
+
+<p>Học lớp 1 ta cũng biết là nếu muốn so sánh 2 số thì ta có thể trừ 2 số đó cho nhau là so sánh được, vậy bây giờ tương tự, so sánh mặt bạn với hình cho sẵn trong bộ dữ liệu ta cũng tính hiệu 2 tensor để so sánh thôi :)))</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ví dụ như tính norm L1 của 2 tensor nó ez như vầy cũng nhận dạng mặt đc: d1(I1,I2)=∑p</td>
+      <td>Ip1−Ip2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nghe thì ez cơ mà làm thì ko :) thực chất so sánh 2 hình được chụp rất khó ra kết quả đúng vì một chút ảnh hưởng môi trường cũng có thể khiến 2 ảnh khác nhau hoàn toàn.
+Vì vậy giải pháp đặt ra là ta phải trích một số đặc trưng của gương mặt để nhận dạng (feature extract), điều này giống như khi ta nhìn ai đó, ta sẽ nhìn thấy người này mũi cao, thấp,… để nhận biết đó là ai</p>
+
+<p><img src="/images/post1/img4.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p>Các phương pháp cổ điển có thể kể đến như eigenface (chéo hóa vector), pca ( phương pháp tính ), nhưng chúng đều không đủ “ngon: để áp dụng thực tế.Cho đến khi…….</p>
+
+<h1 id="3-mạng-neuron-tích-chập-và-facenet-ra-đời-3">3. Mạng neuron tích chập và facenet ra đời :3</h1>
+
+<p>Thực chất mà nói mạng neuron tích chập và machine learning không phải là mới mẻ gì, tiền đề của nó đã có từ thời von Neuman, nhưng chỉ đến ngày nay nhờ sự phát triển của GPU mạng neuron tích chập mới phát triển được đến vậy</p>
+
+<p><img src="/images/post1/img5.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Cách tính của lớp tích chập</em></p>
+
+<p><img src="/images/post1/img6.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Mạng neuron tích chập</em></p>
+
+<p>Để hiểu cho đơn giản CNN hay Mạng neuron tích chập gồm các lớp tích chập sẽ thực hiện các thao tác tách feature của một hình ảnh ra để nhận dạng
+Facenet, thực chất là một CNN có nhiệm vụ tách các đặc trưng của một ảnh mặt. Điểm đặc biệt tạo nên sự khác biệt của Facenet là nó sử dụng hàm lỗi Triplet để tối thiểu hóa khoảng cách giữa các gương mặt tương đồng và tối đa hóa khoảng cách đến những gương mặt không tương đồng, vì vậy facenet có thể phân biệt rất chính xác người với người</p>
+
+<p><img src="/images/post1/img7.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Triplet loss</em></p>
+
+<p>Sau khi tách được đặc trưng thì ta chỉ cần đơn giản là so sánh đặc trưng đó với các vector đặc trưng của các gương mặt trong bộ dữ liệu là OK &lt;3
+Tóm lại đó là cách facenet hay FaceID hoạt động, trích đặc trưng và so sánh. Tất nhiên nói luôn dễ hơn làm, để thực hiên một hệ thống an ninh bằng mặt cần đầu tư thời gian  và công sức rất nhiều.
+<img src="/images/post1/img8.jpg" alt="an image alt text" title="an image title" /></p>
+
+<p><em>Cách CNN tách feature</em></p>
+:ET
