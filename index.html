@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
+  {% for post in site.posts limit : 5 % }
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
@@ -24,4 +24,9 @@ layout: default
 
     </article>
   {% endfor %}
+   <!-- Pager -->
+   <div class="clearfix">
+    <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+  </div>
+  
 </div>
