@@ -7,7 +7,11 @@ layout: default
  
 
   <!-- Page Header -->
-  <header>
+  {% if page.background %}
+  <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+    {% else %}
+    <header class="masthead">
+      {% endif %}
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -27,7 +31,6 @@ layout: default
         </div>
       </div>
     </header>
-   
     <div class="post-categories">
       {% if post %}
         {% assign categories = post.categories %}
@@ -62,4 +65,3 @@ layout: default
         </div>
       </div>
     </div>
-    <div class="fb-comments" data-href="{{ site.url }}{{ page.url }}"></div>
