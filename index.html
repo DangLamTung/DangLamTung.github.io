@@ -1,10 +1,10 @@
 ---
-layout: home
+layout: default
 background: '/images/background.jpg'
 ---
 
 <div class="posts">
-  <!-- {% for post in site.posts %}
+  {% for post in site.posts %}
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
@@ -15,5 +15,5 @@ background: '/images/background.jpg'
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
-  {% endfor %} -->
+  {% endfor %}
 </div>
