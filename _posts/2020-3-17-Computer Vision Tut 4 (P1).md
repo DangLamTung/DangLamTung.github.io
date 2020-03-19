@@ -260,25 +260,6 @@ Keypoints giữa 2 hình sẽ được match bằng cách tìm hàng xóm gần 
 pip install opencv-python==3.4.2.17 opencv-contrib-python==3.4.2.17
 ```
 
-    Collecting opencv-python==3.4.2.17
-      Downloading opencv_python-3.4.2.17-cp36-cp36m-manylinux1_x86_64.whl (25.0 MB)
-    [K     |████████████████████████████████| 25.0 MB 1.1 MB/s eta 0:00:01
-    [?25hCollecting opencv-contrib-python==3.4.2.17
-      Downloading opencv_contrib_python-3.4.2.17-cp36-cp36m-manylinux1_x86_64.whl (30.6 MB)
-    [K     |████████████████████████████████| 30.6 MB 2.2 MB/s eta 0:00:01
-    [?25hRequirement already satisfied: numpy>=1.11.3 in ./opencv/lib/python3.6/site-packages (from opencv-python==3.4.2.17) (1.18.1)
-    Installing collected packages: opencv-python, opencv-contrib-python
-      Attempting uninstall: opencv-python
-        Found existing installation: opencv-python 3.3.0.10
-        Uninstalling opencv-python-3.3.0.10:
-          Successfully uninstalled opencv-python-3.3.0.10
-      Attempting uninstall: opencv-contrib-python
-        Found existing installation: opencv-contrib-python 3.3.0.10
-        Uninstalling opencv-contrib-python-3.3.0.10:
-          Successfully uninstalled opencv-contrib-python-3.3.0.10
-    Successfully installed opencv-contrib-python-3.4.2.17 opencv-python-3.4.2.17
-    Note: you may need to restart the kernel to use updated packages.
-
 
 
 ```python
