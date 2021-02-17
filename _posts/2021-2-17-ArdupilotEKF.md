@@ -51,7 +51,7 @@ Magnetometer được đối xử khá là đặc biệt khi mình nó có 3 tr�
 
 Thay vì phương pháp chọn 1 trục magnet như mình làm, tác giả ước lượng magnet theo giá trị ở cả 3 trục NED, không biết là lúc đầu calib lại hay là dựa trên bản đồ từ, nhưng ưu điểm là cách này giúp ước lượng declination và inclination tốt hơn 
 
-![image.png]({{ site.baseurl }}/images/ekf_new/magnet2.PNG)
+![image.png]({{ site.baseurl }}/images/ekf_new/magnet3.PNG)
 
 Phần này mình chưa hiểu rõ lắm cách xử lý yaw của bộ lọc.
 
