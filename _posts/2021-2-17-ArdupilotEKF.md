@@ -81,4 +81,3 @@ Các phần code có thể tham khảo từ model simulink của bộ lọc tron
 
 ![image.png]({{ site.baseurl }}/images/ekf_new/model.PNG)
 
-Tóm lại: Cách thiết kế khá là chuyên nghiệp :3 có thể mình sẽ có thử nghiệm thiết kế bộ lọc theo phong cách này
